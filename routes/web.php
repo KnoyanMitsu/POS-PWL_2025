@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/level',[LevelController::class, 'index']);
-
+Route::get('/user',[UserController::class, 'index']);
 Route::get('/kategori',[KategoriController::class, 'index']);
 
 // Route::prefix('category')->group(function (){
@@ -32,6 +32,6 @@ Route::get('/kategori',[KategoriController::class, 'index']);
     // Route::get('/baby-kid', [CategoryController::class,'babykid'])->name("babykid");
 // });
 
-Route::get('/user/{id}/name/{name}',[UserController::class,'user']);
+// Route::get('/user/{id}/name/{name}',[UserController::class,'user']);
 
 Route::post('/transaction',[TransactionController::class,'transcation'])->name('transcation');
