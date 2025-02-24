@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
@@ -23,13 +23,14 @@ Route::get('/', function () {
 
 Route::get('/level',[LevelController::class, 'index']);
 
+Route::get('/kategori',[KategoriController::class, 'index']);
 
-Route::prefix('category')->group(function (){
-    Route::get('/food-beverage', [CategoryController::class,'beverage'])->name("beverage");
-    Route::get('/beauty-health', [CategoryController::class,'beauty'])->name("beauty");
-    Route::get('/home-care', [CategoryController::class,'homecare'])->name("homecare");
-    Route::get('/baby-kid', [CategoryController::class,'babykid'])->name("babykid");
-});
+// Route::prefix('category')->group(function (){
+    // Route::get('/food-beverage', [CategoryController::class,'beverage'])->name("beverage");
+    // Route::get('/beauty-health', [CategoryController::class,'beauty'])->name("beauty");
+    // Route::get('/home-care', [CategoryController::class,'homecare'])->name("homecare");
+    // Route::get('/baby-kid', [CategoryController::class,'babykid'])->name("babykid");
+// });
 
 Route::get('/user/{id}/name/{name}',[UserController::class,'user']);
 
